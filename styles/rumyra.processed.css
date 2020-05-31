@@ -1,0 +1,418 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+	As per edited Ruth John 2019
+*/
+@import url(prism.css);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+strong, b {
+  font-weight: bold;
+}
+
+em, italic {
+  font-style: italic;
+}
+
+sup, sub {
+  font-size: 0.85em;
+  position: relative;
+}
+
+sup {
+  top: -0.25em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+code {
+  font-family: monospace;
+}
+
+/* reset browser styles */
+:root {
+  --brown: hsla(315, 3%, 25%, 1);
+  --cream: hsla(33, 55%, 92%, 1);
+  --white: hsla(60, 33%, 99%, 1);
+  --purple: hsla(273, 36%, 64%, 1);
+  --pink: hsla(346, 63%, 64%, 1);
+  --orange: hsla(5, 74%, 67%, 1);
+  --yellow: hsla(38, 86%, 72%, 1);
+  --green: hsla(131, 30%, 63%, 1);
+  --blue: hsla(179, 38%, 58%, 1);
+  /* abstract colours */
+  --col1: var(--purple);
+  --col2: var(--pink);
+  --col3: var(--orange);
+  --col4: var(--yellow);
+  --col5: var(--green);
+  --col6: var(--blue);
+  /* blacks & whites */
+  --darkest: var(--brown);
+  --dark: var(--brown);
+  --light: var(--cream);
+  --lightest: var(--white);
+}
+
+/* colour vars + branding abstraction */
+:root {
+  --size: 1.1rem;
+  /* use for gutters, vertical spacing & fonts */
+  --gutter: var(--size);
+  --verticalSpace: var(--size);
+  /* abstract for use */
+  --xGap: var(--gutter);
+  --xHalfGap: calc(var(--gutter)/2);
+  --xDoubleGap: calc(var(--gutter)*2);
+  --yGap: var(--verticalSpace);
+  --yHalfGap: calc(var(--verticalSpace)/2);
+  --yDoubleGap: calc(var(--verticalSpace)*2);
+  --smallScreen: 420px;
+  --mediumScreem: 650px;
+  --wideScreen: 1200px;
+  --xwideScreen: 2000px;
+  /* 2.52, 2.33, 2.15, 2, 1.85, 1.7, 1.58, 1.47, 1.36, 1.26, 1.16, 0.92, 0.85 -> golden ratio */
+  --fontSize: var(--size);
+  --largeHeaderSize: calc(var(--fontSize)*2.33);
+  --mediumHeaderSize: calc(var(--fontSize)*1.47);
+  --smallHeaderSize: calc(var(--fontSize)*1);
+  --largeFontSize: var(--mediumHeaderSize);
+  --smallFontSize: calc(var(--fontSize)*0.85);
+}
+
+/* unit vars */
+@font-face {
+  font-family: 'Sans';
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/HurmeGeometricSans3.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Sans';
+  font-style: italic;
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/HurmeGeometricSans3Oblique.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Sans';
+  font-weight: bold;
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/HurmeGeometricSans3SemiBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Sans';
+  font-style: italic;
+  font-weight: bold;
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/HurmeGeometricSans3SemiBoldOblique.otf") format("opentype");
+}
+
+:root {
+  --font: 'Sans', sans-serif;
+}
+
+/* font imports and var usage */
+:root {
+  font-size: 100%;
+  line-height: 1;
+}
+
+body {
+  background-color: var(--light);
+  font-family: var(--font);
+  font-size: var(--fontSize);
+  color: var(--dark);
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+/* body */
+/* typography */
+/* ============================== HEADERS */
+[class*="header"], h1, h2, h3, h4, h5, h6 {
+  margin: var(--yGap) 0px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.header--large, h1 {
+  font-size: var(--largeHeaderSize);
+}
+
+.header--medium, h2 {
+  font-size: var(--mediumHeaderSize);
+}
+
+.header--small, h3 {
+  font-size: var(--smallHeaderSize);
+}
+
+/* ======================= TEXT */
+.text, p {
+  margin: var(--yGap) 0px;
+  font-size: var(--fontSize);
+}
+
+.text--lede {
+  font-size: var(--largeFontSize);
+}
+
+.text--small {
+  font-size: var(--smallFontSize);
+}
+
+/* ======================= LINKS */
+.link, a {
+  color: var(--col1);
+  text-decoration: none;
+}
+
+.link:hover, a:hover {
+  text-decoration: underline;
+}
+
+.list {
+  padding-left: var(--xDoubleGap);
+  list-style-type: circle;
+}
+
+.list--numbered {
+  padding-left: var(--xDoubleGap);
+  list-style-type: upper-roman;
+}
+
+.list--desc {
+  display: flow-root;
+}
+
+.list--desc dt, .list--desc dd {
+  width: 50%;
+  box-sizing: border-box;
+  padding: var(--xHalfGap);
+}
+
+.list--desc dt {
+  float: left;
+  text-align: right;
+}
+
+.list--desc dd {
+  float: right;
+  texen: left;
+}
+
+.quote {
+  margin-left: var(--xGap);
+  padding: var(--yHalfGap) var(--xGap);
+  border-left: 3px solid var(--col1);
+}
+
+q, cite {
+  display: block;
+}
+
+q::before {
+  content: '\201F';
+}
+
+q::after {
+  content: '\201E';
+}
+
+cite {
+  font-size: var(--smallFontSize);
+  color: var(--col1);
+}
+
+.quote--callout {
+  width: 50%;
+  padding: var(--yGap) var(--xGap);
+  border: 5px solid var(--col1);
+  border-width: 4px 2px 2px 3px;
+  border-radius: 2px;
+  box-shadow: 0px 0px 1px 0px var(--dark);
+  background-color: var(--lightest);
+}
+
+.quote--callout q {
+  font-size: var(--largeFontSize);
+}
+
+.quote--callout q::before, .quote--callout q::after {
+  font-size: var(--largeHeaderSize);
+  color: var(--col1);
+  line-height: 0.5;
+}
+
+/* headers, paragraphs etc... */
+.code {
+  width: 50%;
+  padding: var(--yGap) var(--xGap);
+  border: 5px solid var(--col1);
+  border-width: 4px 2px 2px 3px;
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+/* code inc prism */
+.paint--large {
+  background-image: paint(largeBackground);
+}
+
+.paint--small {
+  background-image: paint(smallBackground);
+}
+
+.paint__header--one {
+  background-image: paint(headerBackground);
+  padding: var(--yGap) 0px;
+}
+
+.paint__header--two {
+  background-image: paint(headerBackgroundTwo);
+  padding: var(--yGap) 0px;
+}
+
+.paint__callout {
+  background-image: paint(calloutBackground);
+  padding: calc(var(--yGap)*2) calc(var(--xGap)*2);
+  border: 1px solid var(--col1);
+}
+
+.paint__bullet {
+  background-image: paint(bulletBackground);
+  padding: var(--yGap) 0px var(--yGap) calc(var(--xGap)*2);
+}
+
+.paint__cta {
+  display: inline-block;
+  background-image: paint(ctaBackground);
+  padding: calc(var(--yGap)*2) calc(var(--xGap)*4);
+  border: 1px solid var(--col1);
+}
+
+.paint__cta--block {
+  display: inline-block;
+  background-image: paint(ctaBackground);
+  padding: calc(var(--yGap)*2) calc(var(--xGap)*4);
+  border: 1px solid var(--col1);
+}
+
+/* paint functions */
+/* remove this */
+#colours i {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+#colours i:nth-of-type(1) {
+  background-color: var(--col1);
+}
+
+#colours i:nth-of-type(2) {
+  background-color: var(--col2);
+}
+
+#colours i:nth-of-type(3) {
+  background-color: var(--col3);
+}
+
+#colours i:nth-of-type(4) {
+  background-color: var(--col4);
+}
+
+#colours i:nth-of-type(5) {
+  background-color: var(--col5);
+}
+
+#colours i:nth-of-type(6) {
+  background-color: var(--col6);
+}
+
+#colours i:nth-of-type(7) {
+  background-color: var(--darkest);
+}
+
+#colours i:nth-of-type(8) {
+  background-color: var(--dark);
+}
+
+#colours i:nth-of-type(9) {
+  background-color: var(--light);
+}
+
+#colours i:nth-of-type(10) {
+  background-color: var(--lightest);
+}
+
+/* show colours at top */
+body {
+  padding: 2vh;
+}
+
+.paint .paint--large {
+  width: 70vw;
+  min-height: 50vh;
+  padding: 2vw;
+}
+
+.paint .paint--small {
+  width: 30vw;
+}
+
+.paint .paint__header--one {
+  width: 50vw;
+}
+
+.paint .paint__header--two {
+  width: 50vw;
+}
+
+.paint .paint__callout {
+  width: 50vw;
+}

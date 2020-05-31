@@ -1,0 +1,27 @@
+:root {
+	--brown: hsla(315, 3%, 25%, 1);
+  --cream: hsla(33, 55%, 92%, 1);
+  --white: hsla(60, 33%, 99%, 1);
+
+  --purple: hsla(273, 36%, 64%, 1);
+  --pink: hsla(346, 63%, 64%, 1);
+  --orange: hsla(5, 74%, 67%, 1);
+  --yellow: hsla(38, 86%, 72%, 1);
+  --green: hsla(131, 30%, 63%, 1);
+  --blue: hsla(179, 38%, 58%, 1);
+	
+	/* abstract colours */
+	--col1: var(--purple);
+	--col2: var(--pink);
+	--col3: var(--orange);
+	--col4: var(--yellow);
+	--col5: var(--green);
+	--col6: var(--blue);
+
+	/* blacks & whites */
+	--darkest: var(--brown);
+	--dark: var(--brown);
+	--light: var(--cream);
+	--lightest: var(--white);
+}
+

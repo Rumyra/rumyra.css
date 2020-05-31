@@ -1,0 +1,10 @@
+@import 'prism.css';
+
+.code {
+	width: 50%;
+	padding: var(--yGap) var(--xGap);
+	border: 5px solid var(--col1);
+	border-width: 4px 2px 2px 3px;
+	background-color: var(--dark);
+	color: var(--light);
+}

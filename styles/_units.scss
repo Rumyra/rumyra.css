@@ -1,0 +1,27 @@
+:root {
+	--size: 1.1rem; /* use for gutters, vertical spacing & fonts */
+	
+	--gutter: var(--size);
+	--verticalSpace: var(--size);
+	
+	/* abstract for use */
+	--xGap: var(--gutter);
+	--xHalfGap: calc(var(--gutter)/2);
+	--xDoubleGap: calc(var(--gutter)*2);
+	--yGap: var(--verticalSpace);
+	--yHalfGap: calc(var(--verticalSpace)/2);
+	--yDoubleGap: calc(var(--verticalSpace)*2);
+	
+	--smallScreen: 420px;
+	--mediumScreem: 650px;
+	--wideScreen: 1200px;
+	--xwideScreen: 2000px;
+	
+	/* 2.52, 2.33, 2.15, 2, 1.85, 1.7, 1.58, 1.47, 1.36, 1.26, 1.16, 0.92, 0.85 -> golden ratio */
+	--fontSize: var(--size);
+	--largeHeaderSize: calc(var(--fontSize)*2.33);
+	--mediumHeaderSize: calc(var(--fontSize)*1.47);
+	--smallHeaderSize: calc(var(--fontSize)*1);
+	--largeFontSize: var(--mediumHeaderSize);
+	--smallFontSize: calc(var(--fontSize)*0.85);
+}

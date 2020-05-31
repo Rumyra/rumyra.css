@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <title>Rumyra Styles</title>
+  
+  <!--  Styles  -->
+  <link rel="stylesheet" href="styles/rumyra.processed.css">
+</head>
+<body><div class="container">
+	
+	<div id="colours">
+		<i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+	</div>
+  
+	<header>
+		<h1 class="header--large">Rumyra Brand Base Stylesheet</h1>
+		
+		<nav>
+			<ul>
+				<li><a href="#atoms">Atoms</a></li>
+				<li><a href="">Molecules</a></li>
+				<li><a href="">Organisms</a></li>
+				<li><a href="">Templates</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<ul>
+		<li>go through & add normalise</li>
+		<li>make a black colour</li>
+	</ul>
+	
+	<main>
+		<article>
+			<h2 class="header--medium">What</h2>
+			<p>There's a balance here between a full blown pattern library and just a base stylesheet for demos, talks, starting things.</p>
+			<p>This is the latter, we take base HTML elements, page structure and some common components.</p>
+			<p>Everything is a seperate css file and an <code>@import</code> so you can include what you will. I've had to use sass to concatinate into one css file - however I have not written any sass.</p>
+			<p>I'll use atomic and bem as much as pos to try and keep things extendable for future websites & apps.</p>
+		</article>
+		
+		<article id="atoms">
+			<h2 class="header--medium">Atoms</h2>
+			
+			<h1 class="header--large">This is a big heading .header-large</h1>
+			<h2 class="header--medium">This is a medium heading .header--medium</h2>
+			<h3 class="header--small">This is a small heading .header--small</h3>
+			
+			<p class="text--lede">This is a block of lede text .text--lede</p>
+			<p class="text">This is a normal block of text .text <strong>Lorem ipsum dolor</strong> sit amet consectetur <em>adipisicing</em> elit. Sed, repellat exercitationem. Unde temporibus cupiditate dolorem <sup>repudiandae</sup> assumenda commodi <sub>ad alias</sub> illum. Hic nihil rem quis neque alias, aut assumenda ipsam.</p>
+			<p class="text--small">This is a small block of text .text--small <strong>Lorem ipsum dolor</strong> sit amet consectetur <em>adipisicing</em> elit. Sed, repellat exercitationem. Unde temporibus cupiditate dolorem <sup>repudiandae</sup> assumenda commodi <sub>ad alias</sub> illum. Hic nihil rem quis neque alias, aut assumenda ipsam.</p>
+			<p><a href="#">This link might take you somewhere</a></p>
+			
+			<figure>
+				<img src="" alt="" />
+				<figcaption></figcaption>
+			</figure>
+			
+			<ul class="list">
+				<li>.list</li>
+				<li>List item one</li>
+				<li>List item two</li>
+				<li>List item three</li>
+			</ul>
+			
+			<ol class="list--numbered">
+				<li>.list--numbered</li>
+				<li>List item one</li>
+				<li>List item two</li>
+				<li>List item three</li>
+			</ol>
+			
+			<dl class="list--desc">
+				<dt>Term .list--desc</dt>
+				<dd>Definition</dd>
+				<dt>Term</dt>
+				<dd>Definition One</dd>
+				<dd>Definition Two</dd>
+			</dl>
+			
+			<blockquote class="quote">
+				<q>Someone said something once .quote</q>
+				<cite>Said somebody</cite>
+			</blockquote>
+			
+			<blockquote class="quote--callout">
+				<q>.quote--callout Someone said something once Lorem ipsum dolor sit amet consectetur adipisicing elit.</q>
+				<cite>Said somebody</cite>
+			</blockquote>
+			
+			<pre class="code"><code class="language-js">// mapping
+// you want b and you have a
+
+// k is scale
+k = bmax-bmin/amax-amin;
+// map
+b = k(a-amin) + bmin;</code></pre>
+			
+		</article>
+		
+		<article id="molecules">
+			<h2 class="header--medium">Molecules</h2>
+			
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+			
+			<form action="">
+				<label for=""></label>
+				<input type="text">
+				
+			</form>
+			
+		</article>
+	</main>
+	
+	<footer>
+		
+	</footer>
+	
+	
+</div><!-- ./container -->
+  <!-- Scripts -->
+  <script src="scripts/prism.js"></script>
+  <script src="scripts/index.js"></script>
+</body>
+</html>

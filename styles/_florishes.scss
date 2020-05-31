@@ -1,0 +1,36 @@
+.paint--large {
+	background-image: paint(largeBackground);
+}
+.paint--small {
+	background-image: paint(smallBackground);
+}
+.paint__header--one {
+	background-image: paint(headerBackground);
+	padding: var(--yGap) 0px;
+}
+.paint__header--two {
+	background-image: paint(headerBackgroundTwo);
+	padding: var(--yGap) 0px;
+
+}
+.paint__callout {
+	background-image: paint(calloutBackground);
+	padding: calc(var(--yGap)*2) calc(var(--xGap)*2);
+	border: 1px solid var(--col1);
+}
+.paint__bullet {
+	background-image: paint(bulletBackground);
+	padding: var(--yGap) 0px var(--yGap) calc(var(--xGap)*2);
+}
+.paint__cta {
+	display: inline-block;
+	background-image: paint(ctaBackground);
+	padding: calc(var(--yGap)*2) calc(var(--xGap)*4);
+	border: 1px solid var(--col1);
+}
+.paint__cta--block {
+	display: inline-block;
+	background-image: paint(ctaBackground);
+	padding: calc(var(--yGap)*2) calc(var(--xGap)*4);
+	border: 1px solid var(--col1);
+}

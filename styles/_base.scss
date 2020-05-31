@@ -1,0 +1,11 @@
+:root { 
+	font-size: 100%; line-height: 1;
+}
+body {
+	background-color: var(--light);
+	font-family: var(--font);
+	font-size: var(--fontSize);
+	color: var(--dark);
+	letter-spacing: 1px;
+	line-height: 1.3;
+}
