@@ -1,3 +1,7 @@
+h1 {
+	font-size: 2em;
+}
+
 @import 'https://raw.githubusercontent.com/Rumyra/rumyra.css/master/styles/_reset.css'; /* reset browser styles */
 @import 'https://raw.githubusercontent.com/Rumyra/rumyra.css/master/styles/_colours.css'; /* colour vars + branding abstraction */
 @import 'https://raw.githubusercontent.com/Rumyra/rumyra.css/master/styles/_units.css'; /* unit vars */
