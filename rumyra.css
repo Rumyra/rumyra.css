@@ -775,6 +775,10 @@ img {
   border-top: var(--borderWidth) solid var(--dark);
 }
 
+.footer-site p {
+  font-size: var(--largeFontSize);
+}
+
 /* paint functions */
 .wrapper {
   max-width: 990px;
