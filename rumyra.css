@@ -770,6 +770,15 @@ img {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: var(--yDoubleGap);
+  padding: var(--yGap) 0px;
+  border-top: var(--borderWidth) solid var(--dark);
+}
+
+/* paint functions */
+.wrapper {
+  max-width: 990px;
+  margin: 0px auto;
 }
 
 /* paint functions */
