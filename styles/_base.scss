@@ -1,11 +1,39 @@
 :root { 
 	font-size: 100%; line-height: 1;
+  --borderWidth: 6px;
+  --borderRadius: 2px;
+  --boxShadow: 0px 0px 1px 0px var(--dark);
 }
 body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
 	background-color: var(--light);
+
 	font-family: var(--font);
 	font-size: var(--fontSize);
 	color: var(--dark);
 	letter-spacing: 1px;
 	line-height: 1.3;
+  text-rendering: optimizeSpeed;
+}
+
+/* I don't usually use hrs but just in case */
+hr {
+  overflow: visible; /* For IE */
+  padding: 0px;
+  margin: var(--yGap) 0px;
+  border: none;
+  border-top: 4px solid var(--primCol);
+  color: var(--primCol);
+  text-align: center;
+}
+hr:after {
+  content: "• • • • • • • • •";
+  display: inline-block;
+  position: relative;
+  top: -0.5em;
+  font-size: 1.5em;
+  line-height: 1;
+  padding: 0 0.25em;
+  background: var(--light);
 }

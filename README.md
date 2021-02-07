@@ -4,18 +4,26 @@ Brand CSS Styles for Ruth John / Rumyra pens, demos, blog, apps, websites, talks
 
 [https://rumyra.github.io/rumyra.css/rumyra.css](https://rumyra.github.io/rumyra.css/rumyra.css)
 
+NB: It's a good idea to start with a sample page below to include any worklet js.
+
 You do not have permission to use, modify, or share this code
 
-## Notes
-
-I'm only using sass to compile a final css file to use remotely. It's hosted on github pages, so the link for HTML is:
+## Compiling
 
 In the `styles` directory
 
-`sass rumyra.scss ../rumyra.css`
+Development
 
-### TODOS
+`sass --watch rumyra.scss:../rumyra.css`
 
-- Sort out a system that utilises both a compiled accessible css file for demos on other platforms, one for local demos and starter files for bigger projects
-	- Demo version should include page styles like body padding
-	- Have a shared-styles folder and different compilations for different css files to use - MAKE
+Or compile just once
+
+`sass rumyra.scss:../rumyra.css`
+
+## Example pages
+
+- [Index of all elements - good for reference](https://rumyra.github.io/rumyra.css/)
+- [Basic page - good for demos](https://rumyra.github.io/rumyra.css/studio-page.html)
+- [Paint functions - examples of different paint functions](https://rumyra.github.io/rumyra.css/paint-functions.html)
+
+

@@ -1,0 +1,46 @@
+/* shared for all buttons */
+button, [class^=btn] {
+  display: inline-block;
+  border: var(--borderWidth) solid var(--primCol);
+  border-radius: var(--borderRadius);
+  font-size: var(--fontSize);
+  font-family: var(--font);
+
+  cursor: pointer;
+}
+
+/* basic button */
+button, .btn {
+  padding: var(--yGap) var(--xDoubleGap);
+  background: var(--primCol) none top left;
+  color: var(--lightest);
+}
+button:hover, .btn:hover {
+  background-color: var(--lightest);
+  color: var(--primCol);
+}
+/* using secondary colour */
+.btn--alt {
+  background-color: var(--secCol);
+  border-color: var(--secCol);
+}
+.btn--alt:hover {
+  color: var(--secCol);
+}
+
+/* set of buttons for a one select */
+.select--btns button {
+  padding: var(--yHalfGap) var(--xGap);
+  border-color: var(--secCol);
+  background-color: var(--lightest);
+  color: var(--dark);
+}
+.select--btns button:hover {
+  border-color: var(--brown);
+}
+.select--btns button[data-selected="true"] {
+  border-color: var(--dark);
+  background-color: var(--secCol);
+}
+
+

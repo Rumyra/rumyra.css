@@ -3,8 +3,8 @@
    v2.0 | 20110126
    License: none (public domain)
 	As per edited Ruth John 2019
+	Includes picks from https://hankchizljaw.com/wrote/a-modern-css-reset/
 */
-@import 'prism.css';
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,6 +24,13 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -86,26 +93,36 @@ code {
   outline: none;
 }
 
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  /* We are relaxing the `declaration-no-important` here
+     because we want to ensure that code further down the
+     cascade will adhere to this accessibility enhancement */
+  /* stylelint-disable declaration-no-important */
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 /* reset browser styles */
 :root {
+  --black: hsla(315, 3%, 15%, 1);
   --brown: hsla(315, 3%, 25%, 1);
-  --cream: hsla(33, 55%, 92%, 1);
+  --cream: hsla(33, 55%, 94%, 1);
   --white: hsla(60, 33%, 99%, 1);
-  --purple: hsla(273, 36%, 64%, 1);
-  --pink: hsla(346, 63%, 64%, 1);
-  --orange: hsla(5, 74%, 67%, 1);
-  --yellow: hsla(38, 86%, 72%, 1);
-  --green: hsla(131, 30%, 63%, 1);
-  --blue: hsla(179, 38%, 58%, 1);
-  /* abstract colours */
-  --col1: var(--purple);
-  --col2: var(--pink);
-  --col3: var(--orange);
-  --col4: var(--yellow);
-  --col5: var(--green);
-  --col6: var(--blue);
-  /* blacks & whites */
-  --darkest: var(--brown);
+  --purple: hsla(273, 36%, 59%, 1);
+  --pink: hsla(346, 63%, 59%, 1);
+  --orange: hsla(5, 74%, 62%, 1);
+  --yellow: hsla(38, 86%, 67%, 1);
+  --green: hsla(131, 30%, 58%, 1);
+  --blue: hsla(179, 38%, 53%, 1);
+  /* abstract colours -> all components use prim or sec, change it per component in situ */
+  --primCol: var(--purple);
+  --secCol: var(--green);
+  /* darks & lights - although I will use black & white in use */
+  --darkest: var(--black);
   --dark: var(--brown);
   --light: var(--cream);
   --lightest: var(--white);
@@ -166,35 +183,64 @@ code {
 :root {
   font-size: 100%;
   line-height: 1;
+  --borderWidth: 6px;
+  --borderRadius: 2px;
+  --boxShadow: 0px 0px 1px 0px var(--dark);
 }
 
 body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
   background-color: var(--light);
   font-family: var(--font);
   font-size: var(--fontSize);
   color: var(--dark);
   letter-spacing: 1px;
   line-height: 1.3;
+  text-rendering: optimizeSpeed;
 }
 
-/* body */
+/* I don't usually use hrs but just in case */
+hr {
+  overflow: visible;
+  /* For IE */
+  padding: 0px;
+  margin: var(--yGap) 0px;
+  border: none;
+  border-top: 4px solid var(--primCol);
+  color: var(--primCol);
+  text-align: center;
+}
+
+hr:after {
+  content: "• • • • • • • • •";
+  display: inline-block;
+  position: relative;
+  top: -0.5em;
+  font-size: 1.5em;
+  line-height: 1;
+  padding: 0 0.25em;
+  background: var(--light);
+}
+
+/* body, wrapper + a few style custom props */
 /* typography */
 /* ============================== HEADERS */
-[class*=header], h1, h2, h3, h4, h5, h6 {
+[class*=heading], h1, h2, h3, h4, h5, h6 {
   margin: var(--yGap) 0px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.header--large, h1 {
+.heading--large, h1 {
   font-size: var(--largeHeaderSize);
 }
 
-.header--medium, h2 {
+.heading--medium, h2 {
   font-size: var(--mediumHeaderSize);
 }
 
-.header--small, h3 {
+.heading--small, h3 {
   font-size: var(--smallHeaderSize);
 }
 
@@ -214,12 +260,16 @@ body {
 
 /* ======================= LINKS */
 .link, a {
-  color: var(--col1);
+  color: var(--primCol);
   text-decoration: none;
 }
 
 .link:hover, a:hover {
   text-decoration: underline;
+}
+
+[class*=list] {
+  margin: var(--yGap) 0px;
 }
 
 .list {
@@ -249,13 +299,17 @@ body {
 
 .list--desc dd {
   float: right;
-  texen: left;
+  text-align: left;
+}
+
+[class*=quote] {
+  margin: var(--yGap) 0px;
 }
 
 .quote {
   margin-left: var(--xGap);
   padding: var(--yHalfGap) var(--xGap);
-  border-left: 3px solid var(--col1);
+  border-left: var(--borderWidth) solid var(--primCol);
 }
 
 q, cite {
@@ -272,16 +326,15 @@ q::after {
 
 cite {
   font-size: var(--smallFontSize);
-  color: var(--col1);
+  color: var(--primCol);
 }
 
 .quote--callout {
   width: 50%;
   padding: var(--yGap) var(--xGap);
-  border: 5px solid var(--col1);
-  border-width: 4px 2px 2px 3px;
-  border-radius: 2px;
-  box-shadow: 0px 0px 1px 0px var(--dark);
+  border: var(--borderWidth) solid var(--primCol);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--boxShadow);
   background-color: var(--lightest);
 }
 
@@ -291,21 +344,299 @@ cite {
 
 .quote--callout q::before, .quote--callout q::after {
   font-size: var(--largeHeaderSize);
-  color: var(--col1);
+  color: var(--primCol);
   line-height: 0.5;
 }
 
 /* headers, paragraphs etc... */
-.code {
-  width: 50%;
-  padding: var(--yGap) var(--xGap);
-  border: 5px solid var(--col1);
-  border-width: 4px 2px 2px 3px;
-  background-color: var(--dark);
-  color: var(--light);
+/* shared for all buttons */
+button, [class^=btn] {
+  display: inline-block;
+  border: var(--borderWidth) solid var(--primCol);
+  border-radius: var(--borderRadius);
+  font-size: var(--fontSize);
+  font-family: var(--font);
+  cursor: pointer;
 }
 
-/* code inc prism */
+/* basic button */
+button, .btn {
+  padding: var(--yGap) var(--xDoubleGap);
+  background: var(--primCol) none top left;
+  color: var(--lightest);
+}
+
+button:hover, .btn:hover {
+  background-color: var(--lightest);
+  color: var(--primCol);
+}
+
+/* using secondary colour */
+.btn--alt {
+  background-color: var(--secCol);
+  border-color: var(--secCol);
+}
+
+.btn--alt:hover {
+  color: var(--secCol);
+}
+
+/* set of buttons for a one select */
+.select--btns button {
+  padding: var(--yHalfGap) var(--xGap);
+  border-color: var(--secCol);
+  background-color: var(--lightest);
+  color: var(--dark);
+}
+
+.select--btns button:hover {
+  border-color: var(--brown);
+}
+
+.select--btns button[data-selected=true] {
+  border-color: var(--dark);
+  background-color: var(--secCol);
+}
+
+/* buttons, inc select group */
+/* PrismJS 1.17.1
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+glsl+json+scss&plugins=toolbar+show-language */
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+code[class*=language-],
+pre[class*=language-] {
+  color: #ccc;
+  background: none;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*=language-] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+:not(pre) > code[class*=language-],
+pre[class*=language-] {
+  background: #2d2d2d;
+}
+
+/* Inline code */
+:not(pre) > code[class*=language-] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999;
+}
+
+.token.punctuation {
+  color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #e2777a;
+}
+
+.token.function-name {
+  color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: green;
+}
+
+div.code-toolbar {
+  position: relative;
+}
+
+div.code-toolbar > .toolbar {
+  position: absolute;
+  top: 0.3em;
+  right: 0.2em;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+div.code-toolbar:hover > .toolbar {
+  opacity: 1;
+}
+
+/* Separate line b/c rules are thrown out if selector is invalid.
+   IE11 and old Edge versions don't support :focus-within. */
+div.code-toolbar:focus-within > .toolbar {
+  opacity: 1;
+}
+
+div.code-toolbar > .toolbar .toolbar-item {
+  display: inline-block;
+}
+
+div.code-toolbar > .toolbar a {
+  cursor: pointer;
+}
+
+div.code-toolbar > .toolbar button {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-user-select: none;
+  /* for button */
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+div.code-toolbar > .toolbar a,
+div.code-toolbar > .toolbar button,
+div.code-toolbar > .toolbar span {
+  color: #bbb;
+  font-size: 0.8em;
+  padding: 0 0.5em;
+  background: #f5f2f0;
+  background: rgba(224, 224, 224, 0.2);
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+}
+
+div.code-toolbar > .toolbar a:hover,
+div.code-toolbar > .toolbar a:focus,
+div.code-toolbar > .toolbar button:hover,
+div.code-toolbar > .toolbar button:focus,
+div.code-toolbar > .toolbar span:hover,
+div.code-toolbar > .toolbar span:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+.code, pre[class*=language-] {
+  padding: var(--yGap) var(--xGap);
+  box-sizing: border-box;
+  border: var(--borderWidth) solid var(--primCol);
+  border-radius: var(--borderRadius);
+  background-color: var(--dark);
+  color: var(--lightest);
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.code code, pre[class*=language-] code {
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* code blocks inc prism */
+img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--borderRadius);
+  object-fit: cover;
+}
+
+/*there are figure elements*/
+[class*=image--] {
+  position: relative;
+  height: 30vw;
+  width: 50vw;
+  margin: var(--yGap) 0px;
+  border: var(--borderWidth) solid var(--primCol);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--boxShadow);
+}
+
+[class*=image--] figcaption {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  padding: var(--yGap) var(--xGap);
+  background-color: var(--light);
+}
+
+.image--feature {
+  height: 40vw;
+  width: 100%;
+}
+
+/* images, video, audio */
 .paint--large {
   background-image: paint(largeBackground);
 }
@@ -350,6 +681,41 @@ cite {
 }
 
 /* paint functions */
+.github-corner svg {
+  fill: var(--primCol);
+  color: var(--light);
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  20%, 60% {
+    transform: rotate(-25deg);
+  }
+  40%, 80% {
+    transform: rotate(10deg);
+  }
+}
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+/* paint functions */
+/* paint functions */
 /* remove this */
 #colours i {
   display: inline-block;
@@ -358,27 +724,27 @@ cite {
 }
 
 #colours i:nth-of-type(1) {
-  background-color: var(--col1);
+  background-color: var(--purple);
 }
 
 #colours i:nth-of-type(2) {
-  background-color: var(--col2);
+  background-color: var(--pink);
 }
 
 #colours i:nth-of-type(3) {
-  background-color: var(--col3);
+  background-color: var(--orange);
 }
 
 #colours i:nth-of-type(4) {
-  background-color: var(--col4);
+  background-color: var(--yellow);
 }
 
 #colours i:nth-of-type(5) {
-  background-color: var(--col5);
+  background-color: var(--green);
 }
 
 #colours i:nth-of-type(6) {
-  background-color: var(--col6);
+  background-color: var(--blue);
 }
 
 #colours i:nth-of-type(7) {
@@ -423,5 +789,7 @@ body {
 .paint .paint__callout {
   width: 50vw;
 }
+
+/* styles for the styleguide */
 
 /*# sourceMappingURL=rumyra.css.map */

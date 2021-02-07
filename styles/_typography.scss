@@ -1,17 +1,17 @@
 /* typography */
 /* ============================== HEADERS */
-[class*="header"], h1, h2, h3, h4, h5, h6 {
+[class*="heading"], h1, h2, h3, h4, h5, h6 {
   margin: var(--yGap) 0px;
   font-weight: bold;
   text-transform: uppercase;
 }
-.header--large, h1 {
+.heading--large, h1 {
   font-size: var(--largeHeaderSize);
 }
-.header--medium, h2 {
+.heading--medium, h2 {
   font-size: var(--mediumHeaderSize);
 }
-.header--small, h3 {
+.heading--small, h3 {
   font-size: var(--smallHeaderSize);
 }
 /* ======================= TEXT */
@@ -29,9 +29,12 @@
 }
 
 /* ======================= LINKS */
-.link, a {color: var(--col1); text-decoration: none;}
+.link, a {color: var(--primCol); text-decoration: none;}
 .link:hover, a:hover {text-decoration: underline;}
 
+[class*=list] {
+  margin: var(--yGap) 0px;
+}
 .list {
 	padding-left: var(--xDoubleGap);
 	list-style-type: circle;
@@ -54,13 +57,16 @@
 }
 .list--desc dd {
 	float: right;
-	texen: left;
+	text-align: left;
 }
 
+[class*=quote] {
+  margin: var(--yGap) 0px;
+}
 .quote {
 	margin-left: var(--xGap);
 	padding: var(--yHalfGap) var(--xGap);
-	border-left: 3px solid var(--col1);
+	border-left: var(--borderWidth) solid var(--primCol);
 }
 q, cite {display: block;}
 q::before {
@@ -71,17 +77,16 @@ q::after {
 }
 cite {
 	font-size: var(--smallFontSize);
-	color: var(--col1);
+	color: var(--primCol);
 }
 .quote--callout {
 	width: 50%;
 	padding: var(--yGap) var(--xGap);
-	border: 5px solid var(--col1);
-	border-width: 4px 2px 2px 3px;
-	border-radius: 2px;
-	box-shadow: 0px 0px 1px 0px var(--dark);
+	border: var(--borderWidth) solid var(--primCol);
+	border-radius: var(--borderRadius);
+	box-shadow: var(--boxShadow);
 	background-color: var(--lightest);
 }
 .quote--callout q {font-size: var(--largeFontSize);}
-.quote--callout q::before, .quote--callout q::after {font-size: var(--largeHeaderSize); color: var(--col1); line-height:0.5;}
+.quote--callout q::before, .quote--callout q::after {font-size: var(--largeHeaderSize); color: var(--primCol); line-height:0.5;}
 

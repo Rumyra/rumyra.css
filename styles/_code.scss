@@ -1,10 +1,17 @@
-@import 'prism.css';
+@import 'prism.scss';
 
-.code {
-	width: 50%;
+.code, pre[class*=language-] {
 	padding: var(--yGap) var(--xGap);
-	border: 5px solid var(--col1);
-	border-width: 4px 2px 2px 3px;
+  box-sizing: border-box;
+	border: var(--borderWidth) solid var(--primCol);
+  border-radius: var(--borderRadius);
 	background-color: var(--dark);
-	color: var(--light);
+	color: var(--lightest);
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.code code, pre[class*=language-] code {
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
 }

@@ -2,12 +2,12 @@
 #colours i {
 	display: inline-block; width: 30px; height: 30px;
 }
-#colours i:nth-of-type(1) {background-color: var(--col1);}
-#colours i:nth-of-type(2) {background-color: var(--col2);}
-#colours i:nth-of-type(3) {background-color: var(--col3);}
-#colours i:nth-of-type(4) {background-color: var(--col4);}
-#colours i:nth-of-type(5) {background-color: var(--col5);}
-#colours i:nth-of-type(6) {background-color: var(--col6);}
+#colours i:nth-of-type(1) {background-color: var(--purple);}
+#colours i:nth-of-type(2) {background-color: var(--pink);}
+#colours i:nth-of-type(3) {background-color: var(--orange);}
+#colours i:nth-of-type(4) {background-color: var(--yellow);}
+#colours i:nth-of-type(5) {background-color: var(--green);}
+#colours i:nth-of-type(6) {background-color: var(--blue);}
 #colours i:nth-of-type(7) {background-color: var(--darkest);}
 #colours i:nth-of-type(8) {background-color: var(--dark);}
 #colours i:nth-of-type(9) {background-color: var(--light);}

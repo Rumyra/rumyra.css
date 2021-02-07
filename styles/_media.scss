@@ -1,0 +1,25 @@
+img {
+  display: block;
+  height: 100%; width: 100%;
+  border-radius: var(--borderRadius);
+  object-fit: cover;
+}
+
+/*there are figure elements*/
+[class*=image--] {
+  position: relative;
+  height: 30vw; width: 50vw;
+  margin: var(--yGap) 0px;
+  border: var(--borderWidth) solid var(--primCol);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--boxShadow);
+}
+[class*=image--] figcaption {
+  position: absolute; bottom: 0px; right: 0px;
+  padding: var(--yGap) var(--xGap);
+  background-color: var(--light);
+}
+
+.image--feature {
+  height: 40vw; width: 100%;
+}
