@@ -26,4 +26,9 @@ Or compile just once
 - [Basic page - good for demos](https://rumyra.github.io/rumyra.css/studio-page.html)
 - [Paint functions - examples of different paint functions](https://rumyra.github.io/rumyra.css/paint-functions.html)
 
+### TODO
+
+- Find a way to compile css without `_X` files which are only used for index
+- make a catelogue of social link svgs
+
 

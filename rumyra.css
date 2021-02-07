@@ -715,6 +715,63 @@ img {
   }
 }
 /* paint functions */
+/* basic top site nav */
+.site__nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: var(--yDoubleGap);
+  padding: var(--yGap) 0px;
+  border-bottom: var(--borderWidth) solid var(--dark);
+}
+
+.site__nav li {
+  font-size: var(--largeFontSize);
+}
+
+.site__nav a {
+  color: var(--dark);
+}
+
+.site__nav a:hover {
+  color: var(--primCol);
+}
+
+/* socials */
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-links li a {
+  padding: 0px;
+  border: none;
+}
+
+.social-links li a svg {
+  width: auto;
+  height: 64px;
+  padding: var(--yHalfGap) var(--xHalfGap);
+  box-sizing: border-box;
+  background-color: var(--light);
+  border-radius: var(--borderRadius);
+}
+
+.social-links li a svg path {
+  fill: var(--dark);
+}
+
+.social-links li a:hover svg path {
+  fill: var(--primCol);
+}
+
+.footer-site {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 /* paint functions */
 /* remove this */
 #colours i {
