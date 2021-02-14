@@ -302,11 +302,11 @@ hr:after {
   text-align: left;
 }
 
-[class*=quote] {
+[class*=quote], [class*=note] {
   margin: var(--yGap) 0px;
 }
 
-.quote {
+.quote, .note {
   margin-left: var(--xGap);
   padding: var(--yHalfGap) var(--xGap);
   border-left: var(--borderWidth) solid var(--primCol);
