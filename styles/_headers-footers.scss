@@ -30,7 +30,7 @@
   border: none;
 }
 .social-links li a svg {
-  width: auto; height: 64px;
+  width: auto; height: 54px;
   padding:var(--yHalfGap) var(--xHalfGap);
   box-sizing: border-box;
   background-color: var(--light);
@@ -53,7 +53,7 @@
 
 .footer-site {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 
   margin-top: var(--yDoubleGap);

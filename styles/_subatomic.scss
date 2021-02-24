@@ -1,36 +1,37 @@
-.paint--large {
+.sub--largebk {
 	background-image: paint(largeBackground);
 }
-.paint--small {
+.sub--smallbk {
 	background-image: paint(smallBackground);
 }
-.paint__header--one {
+.sub--highlight1 {
 	background-image: paint(headerBackground);
 	padding: var(--yGap) 0px;
 }
-.paint__header--two {
+.sub--highlight2 {
 	background-image: paint(headerBackgroundTwo);
 	padding: var(--yGap) 0px;
 
 }
-.paint__callout {
+.sub--callout {
 	background-image: paint(calloutBackground);
 	padding: calc(var(--yGap)*2) calc(var(--xGap)*2);
-	border: 1px solid var(--col1);
+	border: 1px solid var(--primCol);
+	border-width: 2px 0px;
 }
-.paint__bullet {
+.sub--bullet {
 	background-image: paint(bulletBackground);
 	padding: var(--yGap) 0px var(--yGap) calc(var(--xGap)*2);
 }
-.paint__cta {
+.sub--cta {
 	display: inline-block;
 	background-image: paint(ctaBackground);
 	padding: calc(var(--yGap)*2) calc(var(--xGap)*4);
-	border: 1px solid var(--col1);
+	border: 1px solid var(--primCol);
 }
-.paint__cta--block {
+.sub--btn {
 	display: inline-block;
 	background-image: paint(ctaBackground);
 	padding: calc(var(--yGap)*2) calc(var(--xGap)*4);
-	border: 1px solid var(--col1);
+	border: 1px solid var(--primCol);
 }

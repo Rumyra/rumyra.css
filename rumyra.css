@@ -5,6 +5,7 @@
 	As per edited Ruth John 2019
 	Includes picks from https://hankchizljaw.com/wrote/a-modern-css-reset/
 */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -350,25 +351,25 @@ cite {
 
 /* headers, paragraphs etc... */
 /* shared for all buttons */
-button, [class^=btn] {
+button, [class^=btn], .btn {
   display: inline-block;
+  padding: var(--yGap) var(--xDoubleGap);
+  background: var(--primCol) none top left;
   border: var(--borderWidth) solid var(--primCol);
   border-radius: var(--borderRadius);
   font-size: var(--fontSize);
   font-family: var(--font);
+  color: var(--lightest);
   cursor: pointer;
 }
 
-/* basic button */
-button, .btn {
-  padding: var(--yGap) var(--xDoubleGap);
-  background: var(--primCol) none top left;
-  color: var(--lightest);
-}
-
-button:hover, .btn:hover {
+button:hover, [class^=btn]:hover, .btn:hover {
   background-color: var(--lightest);
   color: var(--primCol);
+}
+
+a[class^=btn] {
+  text-decoration: none;
 }
 
 /* using secondary colour */
@@ -398,6 +399,66 @@ button:hover, .btn:hover {
   background-color: var(--secCol);
 }
 
+/*ko-fi link - button style*/
+.btn--kofi {
+  box-sizing: border-box;
+  max-width: 260px;
+  padding: calc(var(--yHalfGap)/2) var(--xHalfGap);
+  background-color: var(--dark);
+  border-color: var(--dark);
+  border-radius: 16px;
+  font-family: "Quicksand", sans-serif;
+  font-size: var(--smallFontSize);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn--kofi:hover {
+  background-color: var(--dark);
+  color: var(--light);
+  border-color: var(--primCol);
+}
+
+.btn--kofi span {
+  display: inline-block;
+}
+
+.btn--kofi svg {
+  display: inline-block;
+  padding-right: var(--xHalfGap);
+  animation: kofi-wiggle 3s infinite;
+}
+
+@keyframes kofi-wiggle {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  60% {
+    transform: rotate(0) scale(1);
+  }
+  75% {
+    transform: rotate(0) scale(1.12);
+  }
+  80% {
+    transform: rotate(0) scale(1.1);
+  }
+  84% {
+    transform: rotate(-10deg) scale(1.1);
+  }
+  88% {
+    transform: rotate(10deg) scale(1.1);
+  }
+  92% {
+    transform: rotate(-10deg) scale(1.1);
+  }
+  96% {
+    transform: rotate(10deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
 /* buttons, inc select group */
 /* PrismJS 1.17.1
 https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+glsl+json+scss&plugins=toolbar+show-language */
@@ -637,47 +698,48 @@ img {
 }
 
 /* images, video, audio */
-.paint--large {
+.sub--largebk {
   background-image: paint(largeBackground);
 }
 
-.paint--small {
+.sub--smallbk {
   background-image: paint(smallBackground);
 }
 
-.paint__header--one {
+.sub--highlight1 {
   background-image: paint(headerBackground);
   padding: var(--yGap) 0px;
 }
 
-.paint__header--two {
+.sub--highlight2 {
   background-image: paint(headerBackgroundTwo);
   padding: var(--yGap) 0px;
 }
 
-.paint__callout {
+.sub--callout {
   background-image: paint(calloutBackground);
   padding: calc(var(--yGap)*2) calc(var(--xGap)*2);
-  border: 1px solid var(--col1);
+  border: 1px solid var(--primCol);
+  border-width: 2px 0px;
 }
 
-.paint__bullet {
+.sub--bullet {
   background-image: paint(bulletBackground);
   padding: var(--yGap) 0px var(--yGap) calc(var(--xGap)*2);
 }
 
-.paint__cta {
+.sub--cta {
   display: inline-block;
   background-image: paint(ctaBackground);
   padding: calc(var(--yGap)*2) calc(var(--xGap)*4);
-  border: 1px solid var(--col1);
+  border: 1px solid var(--primCol);
 }
 
-.paint__cta--block {
+.sub--btn {
   display: inline-block;
   background-image: paint(ctaBackground);
   padding: calc(var(--yGap)*2) calc(var(--xGap)*4);
-  border: 1px solid var(--col1);
+  border: 1px solid var(--primCol);
 }
 
 /* paint functions */
@@ -714,7 +776,7 @@ img {
     animation: octocat-wave 560ms ease-in-out;
   }
 }
-/* paint functions */
+/* github corner */
 /* basic top site nav */
 .site__nav ul {
   display: flex;
@@ -751,7 +813,7 @@ img {
 
 .social-links li a svg {
   width: auto;
-  height: 64px;
+  height: 54px;
   padding: var(--yHalfGap) var(--xHalfGap);
   box-sizing: border-box;
   background-color: var(--light);
@@ -768,7 +830,7 @@ img {
 
 .footer-site {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   margin-top: var(--yDoubleGap);
   padding: var(--yGap) 0px;
@@ -779,13 +841,13 @@ img {
   font-size: var(--largeFontSize);
 }
 
-/* paint functions */
+/* headers & footers */
 .wrapper {
   max-width: 990px;
   margin: 0px auto;
 }
 
-/* paint functions */
+/* templates */
 /* remove this */
 #colours i {
   display: inline-block;

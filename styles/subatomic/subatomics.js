@@ -16,8 +16,8 @@ registerPaint('largeBackground', class {
 		
 		// TODO make custom args
 		// needs min & max size for shapes
-		const bigShapeCount = 2;
-		const smallShapeCount = 3;
+		const bigShapeCount = 1;
+		const smallShapeCount = 2;
 		// needs bounds for position
 		const bigShapeBound = {x: size.width/1.2, y: size.height/1.2};
 		const smallShapeBound = {x: size.width/1.1, y: size.height/1.1};
@@ -31,8 +31,8 @@ registerPaint('largeBackground', class {
 				fillTwo: fills[randomInt(0,5)],
 				x: Math.random()*bigShapeBound.x,
 				y: Math.random()*bigShapeBound.y,
-				width: (Math.random()+0.5)*bigShapeBound.x,
-				height: (Math.random()+0.5)*bigShapeBound.y
+				width: (Math.random()+0.3)*bigShapeBound.x,
+				height: (Math.random()+0.3)*bigShapeBound.y
 			}
 			drawBigShape(PARAMS, ctx)
 		}
@@ -65,7 +65,7 @@ registerPaint('smallBackground', class {
 		
 		// TODO make custom args
 		// needs min & max size for shapes
-		const bigShapeCount = 2;
+		const bigShapeCount = 1;
 		const smallShapeCount = 1;
 		// needs bounds for position
 		const bigShapeBound = {x: size.width/1.2, y: size.height/1.2};
@@ -80,8 +80,8 @@ registerPaint('smallBackground', class {
 				fillTwo: fills[randomInt(0,5)],
 				x: Math.random()*bigShapeBound.x,
 				y: Math.random()*bigShapeBound.y,
-				width: (Math.random()+0.5)*bigShapeBound.x,
-				height: (Math.random()+0.5)*bigShapeBound.y
+				width: (Math.random()+0.3)*bigShapeBound.x,
+				height: (Math.random()+0.3)*bigShapeBound.y
 			}
 			drawBigShape(PARAMS, ctx)
 		}
