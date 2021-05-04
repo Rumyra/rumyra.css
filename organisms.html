@@ -4,7 +4,7 @@
 
   <!--  Meta  -->
   <meta charset="UTF-8" />
-  <title>Home : Rumyra Styles</title>
+  <title>Rumyra Styles : Templates</title>
 
   <!--  Styles  -->
   <link rel="stylesheet" href="rumyra.css">
@@ -17,30 +17,54 @@
 
 	<header>
 		<nav class="nav--hor">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="paint-functions.html">Paint Functions</a></li>
-				<li><a href="custom-properties.html">Custom Properties</a></li>
-				<li><a href="atoms.html">Atoms</a></li>
-				<li><a href="molecules.html">Molecules</a></li>
-				<li><a href="organisms.html">Organisms</a></li>
-				<li><a href="templates.html">Templates</a></li>
-			</ul>
-		</nav>
-		<h1 class="heading--large sub--highlight1">Rumyra Brand Base Stylesheet</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="paint-functions.html">Paint Functions</a></li>
+        <li><a href="custom-properties.html">Custom Properties</a></li>
+        <li><a href="atoms.html">Atoms</a></li>
+        <li><a href="molecules.html">Molecules</a></li>
+        <li><a href="organisms.html">Organisms</a></li>
+        <li><a href="templates.html">Templates</a></li>
+      </ul>
+    </nav>
+    <h1 class="heading--large sub--highlight1">Rumyra Brand Base Stylesheet</h1>
 	</header>
 
+  <hr />
 	<main>
-		<hr />
-		<article>
-			<div id="colours">
-				<i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-			</div>
-			<h2 class="heading--medium">What</h2>
-			<p>There's a balance here between a full blown pattern library and just a base stylesheet for demos, talks, starting things.</p>
-			<p>This is the latter, we take base HTML elements, page structure and some common components.</p>
-			<p>Everything is a seperate css file and an <code>@import</code> so you can include what you will. I've had to use sass to concatinate into one css file - however I have not written any sass.</p>
+		<article id="organisms">
+			<h2 class="heading--medium">Organisms</h2>
+
+			<h3>A Form</h3>
+
+			<p><code>.form</code> uses form molecules in a wrapper.</p>
+
+			<form class="form" action="" method="">
+				<p class="note">This is a note within the form</p>
+				<div class="form--group">
+					<label for="textIn">Text Input</label>
+					<input type="text" name="textIn" id="textIn" />
+				</div>
+				<div class="form--group">
+					<label for="textIn">Text Input</label>
+					<input type="text" name="textIn" id="textIn" />
+				</div>
+				<div class="form--group">
+					<label for="textIn">Text Input</label>
+					<input type="text" name="textIn" id="textIn" />
+				</div>
+				<div class="form--group__submit">
+			  	<input type="submit" class="btn" value="Submit" />
+			  </div>
+			</form>
+
+			<footer class="footer-site">
+				<p>Made by Rumyra</p>
+
+				<ul class="social-links"></ul>
+			</footer>
 		</article>
+
 	</main>
 
 	<footer class="footer-site">

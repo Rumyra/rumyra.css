@@ -60,6 +60,7 @@
 	text-align: left;
 }
 
+/* quotes, notes & callouts ~~~~~~~~~~~~~~~~~*/
 [class*=quote], [class*=note] {
   margin: var(--yGap) 0px;
 }
@@ -79,13 +80,13 @@ cite {
 	font-size: var(--smallFontSize);
 	color: var(--primCol);
 }
-.quote--callout {
-	width: 50%;
+[class*=callout] {
 	padding: var(--yGap) var(--xGap);
 	border: var(--borderWidth) solid var(--primCol);
 	border-radius: var(--borderRadius);
 	box-shadow: var(--boxShadow);
 	background-color: var(--lightest);
+  text-align: center;
 }
 .quote--callout q {font-size: var(--largeFontSize);}
 .quote--callout q::before, .quote--callout q::after {font-size: var(--largeHeaderSize); color: var(--primCol); line-height:0.5;}

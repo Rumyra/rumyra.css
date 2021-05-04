@@ -4,7 +4,7 @@
 
   <!--  Meta  -->
   <meta charset="UTF-8" />
-  <title>Home : Rumyra Styles</title>
+  <title>Custom Props : Rumyra Styles</title>
 
   <!--  Styles  -->
   <link rel="stylesheet" href="rumyra.css">
@@ -17,30 +17,97 @@
 
 	<header>
 		<nav class="nav--hor">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="paint-functions.html">Paint Functions</a></li>
-				<li><a href="custom-properties.html">Custom Properties</a></li>
-				<li><a href="atoms.html">Atoms</a></li>
-				<li><a href="molecules.html">Molecules</a></li>
-				<li><a href="organisms.html">Organisms</a></li>
-				<li><a href="templates.html">Templates</a></li>
-			</ul>
-		</nav>
-		<h1 class="heading--large sub--highlight1">Rumyra Brand Base Stylesheet</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="paint-functions.html">Paint Functions</a></li>
+        <li><a href="custom-properties.html">Custom Properties</a></li>
+        <li><a href="atoms.html">Atoms</a></li>
+        <li><a href="molecules.html">Molecules</a></li>
+        <li><a href="organisms.html">Organisms</a></li>
+        <li><a href="templates.html">Templates</a></li>
+      </ul>
+    </nav>
+    <h1 class="heading--large sub--highlight1">Rumyra Brand Base Stylesheet</h1>
 	</header>
+  <hr />
 
 	<main>
-		<hr />
-		<article>
+		<article id="custom-properties">
+			<h2 class="heading--medium">Custom Properties</h2>
+
+			<h3>Colours</h3>
+
 			<div id="colours">
 				<i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
 			</div>
-			<h2 class="heading--medium">What</h2>
-			<p>There's a balance here between a full blown pattern library and just a base stylesheet for demos, talks, starting things.</p>
-			<p>This is the latter, we take base HTML elements, page structure and some common components.</p>
-			<p>Everything is a seperate css file and an <code>@import</code> so you can include what you will. I've had to use sass to concatinate into one css file - however I have not written any sass.</p>
+			
+			<p>Note I have altered the true brand colours slightly for contrast</p>
+			<pre class="code language-css"><code>:root {
+  --black: hsla(315, 3%, 15%, 1);
+	--brown: hsla(315, 3%, 25%, 1);
+  --cream: hsla(33, 55%, 94%, 1);
+  --white: hsla(60, 33%, 99%, 1);
+
+  --purple: hsla(273, 36%, 59%, 1);
+  --pink: hsla(346, 63%, 59%, 1);
+  --orange: hsla(5, 74%, 62%, 1);
+  --yellow: hsla(38, 86%, 67%, 1);
+  --green: hsla(131, 30%, 58%, 1);
+  --blue: hsla(179, 38%, 53%, 1);
+	
+	/* abstract colours -> all components use prim or sec, change it per component in situ */
+  --primCol: var(--purple);
+  --secCol: var(--green);
+	
+	/* darks & lights - although I will use black & white in use */
+	--darkest: var(--black);
+	--dark: var(--brown);
+	--light: var(--cream);
+	--lightest: var(--white);
+}</code></pre>
+
+			<h3>Units</h3>
+			<pre class="code language-css"><code>:root {
+	--size: 1.1rem; /* use for gutters, vertical spacing & fonts */
+	
+	--gutter: var(--size);
+	--verticalSpace: var(--size);
+	
+	/* abstract for use */
+	--xGap: var(--gutter);
+	--xHalfGap: calc(var(--gutter)/2);
+	--xDoubleGap: calc(var(--gutter)*2);
+	--yGap: var(--verticalSpace);
+	--yHalfGap: calc(var(--verticalSpace)/2);
+	--yDoubleGap: calc(var(--verticalSpace)*2);
+	
+	--smallScreen: 420px;
+	--mediumScreem: 650px;
+	--wideScreen: 1200px;
+	--xwideScreen: 2000px;
+	
+	/* 2.52, 2.33, 2.15, 2, 1.85, 1.7, 1.58, 1.47, 1.36, 1.26, 1.16, 0.92, 0.85 -> golden ratio */
+	--fontSize: var(--size);
+	--largeHeaderSize: calc(var(--fontSize)*2.33);
+	--mediumHeaderSize: calc(var(--fontSize)*1.47);
+	--smallHeaderSize: calc(var(--fontSize)*1);
+	--largeFontSize: var(--mediumHeaderSize);
+	--smallFontSize: calc(var(--fontSize)*0.85);
+}</code></pre>
+
+			<h3>Font</h3>
+			<pre class="code language-css"><code>:root {
+	--font: 'Sans', sans-serif;
+}</code></pre>
+
+			<h3>Design</h3>
+			<pre class="code language-css"><code>:root { 
+  --borderWidth: 6px;
+  --borderRadius: 2px;
+  --boxShadow: 0px 0px 1px 0px var(--dark);
+}</code></pre>
 		</article>
+
 	</main>
 
 	<footer class="footer-site">

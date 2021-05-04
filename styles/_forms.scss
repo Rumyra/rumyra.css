@@ -1,0 +1,148 @@
+/*
+  Forms & form elements
+ */
+
+// ~~~~~~~~~~~~~~~~~~~ atoms: labels, inputs etc...
+label, input, textarea, select {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0px 0px var(--yGap) var(--xGap);
+  padding: var(--yHalfGap) var(--xHalfGap);
+  // border: 1px solid var(--dark);
+  border-radius: var(--borderRadius);
+  font-size: var(--fontSize);
+}
+label {
+  text-align: right;
+  margin: 0px var(--xGap) var(--yGap) 0px;
+}
+[type="submit"] {
+  width: auto;
+}
+input[type="checkbox"], input[type="radio"] {
+  width: 10%;
+}
+input[type="color"] {
+  height: 50px;
+}
+
+/* ~~~~~~~~~~~~~~~~ All the crazy range styling */
+input[type=range] {
+  -webkit-appearance: none;
+  padding: var(--yHalfGap) 0px;
+  background: transparent;
+}
+input[type=range]::before {
+  content: attr(min);
+  display: inline-block;
+  padding-right: var(--xGap);
+}
+input[type=range]::after {
+  content: attr(max);
+  display: inline-block;
+  padding-left: var(--xGap);
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -1vh;
+  height: 4vh; width: 2vw;
+  border: 0.5vmin solid var(--dark);
+  border-radius: var(--borderRadius);
+  background-color: var(--light);
+  cursor: pointer;
+}
+input[type=range]::-moz-range-thumb {
+  height: 4vh; width: 2vw;
+  border: 0.5vmin solid var(--dark);
+  border-radius: var(--borderRadius);
+  background-color: var(--light);
+  cursor: pointer;
+}
+input[type=range]::-ms-thumb {
+  height: 4vh; width: 2vw;
+  border: 0.5vmin solid var(--dark);
+  border-radius: var(--borderRadius);
+  background-color: var(--light);
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 2vh;
+  cursor: pointer;
+  background-color: var(--secCol);
+  border-radius: var(--borderRadius);
+}
+input[type=range]::-moz-range-track {
+  height: 2vh;
+  cursor: pointer;
+  background-color: var(--dark);
+  border-radius: var(--borderRadius);
+}
+input[type=range]::-ms-track {
+  height: 2vh;
+  cursor: pointer;
+  background-color: var(--dark);
+  border-radius: var(--borderRadius);
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: var(--secCol);
+}
+
+// ~~~~~~~~~~~~~~~~~~ molecules: form groups
+.form--group, [class^=form--group] {
+  display: flex;
+  align-items: flex-start;
+}
+[class^=form--group] *:first-child {
+  flex: 1;
+}
+[class^=form--group] *:last-child {
+  flex: 2;
+}
+
+// check boxes & radios
+// NB the extra div the inputs sit in here
+.form--group__check {
+  align-items: center;
+}
+.form--group__check div {
+  width: 100%;
+}
+// submit
+.form--group__submit {
+  justify-content: space-evenly;
+}
+.form--group__submit [type="submit"] {
+  flex: 0;
+}
+
+// forms
+form, .form {
+  max-width: 70%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

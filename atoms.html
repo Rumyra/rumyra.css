@@ -4,7 +4,7 @@
 
   <!--  Meta  -->
   <meta charset="UTF-8" />
-  <title>Home : Rumyra Styles</title>
+  <title>Atoms : Rumyra Styles</title>
 
   <!--  Styles  -->
   <link rel="stylesheet" href="rumyra.css">
@@ -14,33 +14,120 @@
 	</script>
 </head>
 <body><div class="wrapper">
-
 	<header>
 		<nav class="nav--hor">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="paint-functions.html">Paint Functions</a></li>
-				<li><a href="custom-properties.html">Custom Properties</a></li>
-				<li><a href="atoms.html">Atoms</a></li>
-				<li><a href="molecules.html">Molecules</a></li>
-				<li><a href="organisms.html">Organisms</a></li>
-				<li><a href="templates.html">Templates</a></li>
-			</ul>
-		</nav>
-		<h1 class="heading--large sub--highlight1">Rumyra Brand Base Stylesheet</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="paint-functions.html">Paint Functions</a></li>
+        <li><a href="custom-properties.html">Custom Properties</a></li>
+        <li><a href="atoms.html">Atoms</a></li>
+        <li><a href="molecules.html">Molecules</a></li>
+        <li><a href="organisms.html">Organisms</a></li>
+        <li><a href="templates.html">Templates</a></li>
+      </ul>
+    </nav>
+    <h1 class="heading--large sub--highlight1">Rumyra Brand Base Stylesheet</h1>
 	</header>
+  <hr />
 
 	<main>
-		<hr />
-		<article>
-			<div id="colours">
-				<i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-			</div>
-			<h2 class="heading--medium">What</h2>
-			<p>There's a balance here between a full blown pattern library and just a base stylesheet for demos, talks, starting things.</p>
-			<p>This is the latter, we take base HTML elements, page structure and some common components.</p>
-			<p>Everything is a seperate css file and an <code>@import</code> so you can include what you will. I've had to use sass to concatinate into one css file - however I have not written any sass.</p>
+		<article id="atoms">
+			<h2 class="heading--medium">Atoms</h2>
+
+			<h3>Headings</h3>
+
+			<h1 class="heading--large"><code>.heading--large</code> This is a big heading</h1>
+			<h2 class="heading--medium"><code>.heading--medium</code> This is a medium heading</h2>
+			<h3 class="heading--small"><code>.heading--small</code> This is a small heading</h3>
+
+			<h3>Typography</h3>
+
+			<p class="text--lede"><code>.text--lede</code> This is a block of lede text.</p>
+			<p class="text"><code>.text</code> This is a normal block of text <strong>Lorem ipsum dolor</strong> sit amet consectetur <em>adipisicing</em> elit. Sed, repellat exercitationem. Unde temporibus cupiditate dolorem <sup>repudiandae</sup> assumenda commodi <sub>ad alias</sub> illum. Hic nihil rem quis neque alias, aut assumenda ipsam.</p>
+			<p class="text--small"><code>.text--small</code> This is a small block of text <strong>Lorem ipsum dolor</strong> sit amet consectetur <em>adipisicing</em> elit. Sed, repellat exercitationem. Unde temporibus cupiditate dolorem <sup>repudiandae</sup> assumenda commodi <sub>ad alias</sub> illum. Hic nihil rem quis neque alias, aut assumenda ipsam.</p>
+			<p><a href="#"><code>.link</code> This link might take you somewhere</a></p>
+
+			<h3>Media</h3>
+
+			<figure class="image--regular">
+				<img src="http://placekitten.com/600/400" alt="A photo of a kitten" />
+				<figcaption>.image--regular Kitten Caption</figcaption>
+			</figure>
+
+			<figure class="image--feature">
+				<img src="http://placekitten.com/600/400" alt="A photo of a kitten" />
+				<figcaption>.image--feature Kitten Caption</figcaption>
+			</figure>
+
+			<ul class="list">
+				<li>.list</li>
+				<li>List item one</li>
+				<li>List item two</li>
+				<li>List item three</li>
+			</ul>
+
+			<ol class="list--numbered">
+				<li>.list--numbered</li>
+				<li>List item one</li>
+				<li>List item two</li>
+				<li>List item three</li>
+			</ol>
+
+			<dl class="list--desc">
+				<dt>Term .list--desc</dt>
+				<dd>Definition</dd>
+				<dt>Term</dt>
+				<dd>Definition One</dd>
+				<dd>Definition Two</dd>
+			</dl>
+
+			<p class="note">Same as below but a .note class instead.</p>
+
+			<blockquote class="quote">
+				<q>Someone said something once .quote</q>
+				<cite>Said somebody</cite>
+			</blockquote>
+
+			<blockquote class="quote--callout">
+				<q>.quote--callout Someone said something once Lorem ipsum dolor sit amet consectetur adipisicing elit.</q>
+				<cite>Said somebody</cite>
+			</blockquote>
+
+			<p class="note--callout">.note--callout For code highlighting you'll need to include prism.js (again same styling as above but dif class)</p>
+
+			<pre class="code"><code class="language-js">// mapping
+// you want b and you have a
+
+// k is scale
+k = bmax-bmin/amax-amin;
+// map
+b = k(a-amin) + bmin;</code></pre>
+
+			<button class="btn">.btn A Button</button>
+			<button class="btn--alt">.btn--alt Alternative Button</button>
+
+			<a href="https://ko-fi.com/rumyra#checkoutModal" class="btn--kofi">
+				<svg width="45" height="35" viewBox="0 0 190 125" xmlns="http://www.w3.org/2000/svg">
+    			<g>
+        		<path d="M181.665,40.452c-2.442,-12.898 -9.385,-20.933 -16.501,-25.902c-7.359,-5.138 -16.174,-7.778 -25.15,-7.778l-127.379,0c-4.431,0 -6.129,4.326 -6.146,6.493c-0.001,0.283 0.009,1.414 0.009,1.414c-0,-0 -0.209,56.354 0.186,86.453c1.203,17.77 19.007,17.764 19.007,17.764c0,0 58.128,-0.17 86.006,-0.343c1.307,-0.009 2.613,-0.15 3.882,-0.467c15.872,-3.971 17.514,-18.716 17.344,-26.936c31.904,1.772 54.414,-20.74 48.742,-50.698Zm-35.839,29.247c-6.804,0.851 -12.332,0.212 -12.332,0.212l0,-41.661l8.372,0c5.534,0 10.871,2.304 14.482,6.497c2.541,2.952 4.574,7.107 4.574,12.845c0,14.029 -7.228,19.556 -15.096,22.107Z" style="fill:rgb(246,236,223);stroke:rgb(66,62,65);stroke-width:4.17px;"/>
+        		<path d="M68.885,95.526c1.385,0.698 2.27,-0.169 2.27,-0.169c0,-0 20.274,-18.504 29.407,-29.161c8.124,-9.533 8.654,-25.598 -5.297,-31.601c-13.951,-6.003 -25.429,7.062 -25.429,7.062c-9.954,-10.948 -25.019,-10.394 -31.986,-2.985c-6.968,7.409 -4.535,20.126 0.663,27.203c4.879,6.643 26.327,25.759 29.578,28.992c-0,-0 0.236,0.247 0.794,0.659Z" style="fill:rgb(221,105,132);fill-rule:nonzero;"/>
+    			</g>
+				</svg>
+				<span>Buy Me A Coffee!</span>
+			</a>
+
+			<pre class="language-html"><code>&lt;a href="https://ko-fi.com/rumyra#checkoutModal" class="btn--kofi">
+	&lt;svg width="45" height="35" viewBox="0 0 190 125" xmlns="http://www.w3.org/2000/svg">
+		&lt;g>
+  		&lt;path d="M181.665,40.452c-2.442,-12.898 -9.385,-20.933 -16.501,-25.902c-7.359,-5.138 -16.174,-7.778 -25.15,-7.778l-127.379,0c-4.431,0 -6.129,4.326 -6.146,6.493c-0.001,0.283 0.009,1.414 0.009,1.414c-0,-0 -0.209,56.354 0.186,86.453c1.203,17.77 19.007,17.764 19.007,17.764c0,0 58.128,-0.17 86.006,-0.343c1.307,-0.009 2.613,-0.15 3.882,-0.467c15.872,-3.971 17.514,-18.716 17.344,-26.936c31.904,1.772 54.414,-20.74 48.742,-50.698Zm-35.839,29.247c-6.804,0.851 -12.332,0.212 -12.332,0.212l0,-41.661l8.372,0c5.534,0 10.871,2.304 14.482,6.497c2.541,2.952 4.574,7.107 4.574,12.845c0,14.029 -7.228,19.556 -15.096,22.107Z" style="fill:rgb(246,236,223);stroke:rgb(66,62,65);stroke-width:4.17px;"/>
+  		&lt;path d="M68.885,95.526c1.385,0.698 2.27,-0.169 2.27,-0.169c0,-0 20.274,-18.504 29.407,-29.161c8.124,-9.533 8.654,-25.598 -5.297,-31.601c-13.951,-6.003 -25.429,7.062 -25.429,7.062c-9.954,-10.948 -25.019,-10.394 -31.986,-2.985c-6.968,7.409 -4.535,20.126 0.663,27.203c4.879,6.643 26.327,25.759 29.578,28.992c-0,-0 0.236,0.247 0.794,0.659Z" style="fill:rgb(221,105,132);fill-rule:nonzero;"/>
+		&lt;/g>
+	&lt;/svg>
+	&lt;span>Buy Me A Coffee!&lt;/span>
+&lt;/a></code></pre>
+
 		</article>
+
 	</main>
 
 	<footer class="footer-site">

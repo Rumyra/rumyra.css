@@ -1,4 +1,11 @@
-/* basic top site nav */
+/* basic horizontal nav - more links*/
+.nav--hor ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* basic top site nav - few links */
 .site__nav ul {
   display: flex;
   justify-content: space-evenly;
